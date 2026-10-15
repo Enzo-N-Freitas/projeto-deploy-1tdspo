@@ -7,7 +7,7 @@ export default function ProdutoCard({produto}:TipoProdutoAll) {
         <p>R$ {produto.preco} </p>
         <figure>
             <img src={produto.avatar} alt={produto.nome} width={40}/>
-            <figcaption>Quantidade disponível do produto:{produto.estoque}</figcaption>
+            <figcaption>Quantidade disponível do produto:{produto.descricao}</figcaption>
         </figure>
         AÇÕES
     </div>

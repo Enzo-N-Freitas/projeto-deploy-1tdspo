@@ -29,27 +29,27 @@ export default function Home() {
     //Modificar o título da página;
     document.title = "Home";
 
-    const [usuarios, setUsuarios] = useState<TipoUsuarioGit[]>([]);
+    const [usuarios] = useState<TipoUsuarioGit[]>([]);
 
     useEffect( ()=>{
         //Função assíncrona
-        async function loadingData() {
+        // async function loadingData() {
             
-            try {
-                const response = await fetch("https://api.github.com/users");
+        //     try {
+        //         const response = await fetch("https://api.github.com/users");
                 
-                if(!response.ok){
-                    throw new Error("A listagem falhou!");
-                }
+        //         if(!response.ok){
+        //             throw new Error("A listagem falhou!");
+        //         }
                 
-                const data:TipoUsuarioGit[] = await response.json();
+        //         const data:TipoUsuarioGit[] = await response.json();
                 
-                setUsuarios(data);
+        //         setUsuarios(data);
 
-            } catch (error) {
-                console.error(error);
-            }
-        }
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // }
 
         //Executando a função
         // loadingData();

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import type { TipoProduto } from "../../types/types";
-import { Link, useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import ProdutoCard from "../../components/ProdutoCard";
 
 export default function Produtos() {
   //Modificar o título da página;
   document.title = "Produtos";
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   //Criando o recipiente da lista de dados e tipando com o tipo de produto
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
@@ -36,26 +36,26 @@ export default function Produtos() {
     carregaProdutos();
   }, []);
 
-  const handleDelete = async (id: string) => {
-    try {
-      const response = await fetch(`http://localhost:3001/produtos/${id}`, {
-        method: "DELETE",
-      });
+  // const handleDelete = async (id: string) => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3001/produtos/${id}`, {
+  //       method: "DELETE",
+  //     });
 
-      if (!response.ok) {
-        throw new Error(
-          `A exclusão falhou: ${response.status} - ${response.statusText}`,
-        );
-      }
+  //     if (!response.ok) {
+  //       throw new Error(
+  //         `A exclusão falhou: ${response.status} - ${response.statusText}`,
+  //       );
+  //     }
 
-      //MSG de SUCESSO
-      alert("O produto foi excluído com sucesso!");
-      //Redirecionando para a página de produtos
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //     //MSG de SUCESSO
+  //     alert("O produto foi excluído com sucesso!");
+  //     //Redirecionando para a página de produtos
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <main style={{ padding: "20px" }}>
